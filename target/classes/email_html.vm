@@ -1,0 +1,36 @@
+<html>
+<body>
+<p>The following movies are now playing at the Spectrum Theater:</p>
+<br>
+<table style="border: 1px solid black; border-collapse: collapse">
+    #set( $count = 1 )
+    #foreach( $film in $filmList )
+        <tr>
+            <td colspan=2 style="background: black; color: #ffadad; text-align: left; padding: 5px"><b>Film #$count</b></td>
+        </tr>
+        <tr>
+            <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; background: #F0EFEB; width: 9%">Title</th>
+            <td style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; word-wrap: break-word; background: #F0EFEB"> $film.getTitle() </td>
+        </tr>
+        <tr>
+            <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; background: #F0EFEB; width: 9%">Brief Synopsis</th>
+            <td style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; word-wrap: break-word; background: #F0EFEB"> $film.getSynopsis() </td>
+        </tr>
+        <tr>
+            <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; background: #F0EFEB; width: 9%">Extended Synopsis</th>
+            <td style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; word-wrap: break-word; background: #F0EFEB"> $film.getLongSynopsis() </td>
+        </tr>
+        <tr>
+            <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; background: #F0EFEB; width: 9%">Trailer</th>
+            <td style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; word-wrap: break-word; background: #F0EFEB"> $film.getTrailerLink() </td>
+        </tr>
+        <tr>
+            <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; background: #F0EFEB; width: 9%">Buy Tickets</th>
+            <td style="border: 1px solid black; border-collapse: collapse; padding: 5px; text-align: left; word-wrap: break-word; background: #F0EFEB">
+                https://www.landmarktheatres.com/$film.getBuyTickets() </td>
+        </tr>
+        #set( $count = $count + 1 )
+    #end
+</table>
+</body>
+</html>
