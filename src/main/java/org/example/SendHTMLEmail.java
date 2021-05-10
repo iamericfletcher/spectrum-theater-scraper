@@ -18,7 +18,7 @@ public class SendHTMLEmail {
     public static void sendEmail(List<Movie> movieList) {
 
         // Recipient's email ID needs to be mentioned.
-        String to = "hayden@avuna.net";
+        String to = "EricFletcher3@gmail.com";
 
         // Sender's email ID needs to be mentioned
         String from = "EricFletcher3@gmail.com";
